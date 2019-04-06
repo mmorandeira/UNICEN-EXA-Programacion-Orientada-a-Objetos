@@ -1,9 +1,9 @@
 package moran.practico2.ejercicio3;
 
 public class Point {
-    private Double x,y;
+    private double x,y;
 
-    public Point(Double x,Double y){
+    public Point(double x,double y){
         this.x=x;
         this.y=y;
     }
@@ -13,20 +13,20 @@ public class Point {
         this.y=0d;
     }
 
-    public void move(Double x, Double y){
+    public void move(double x, double y){
         this.x+=x;
         this.y+=y;
     }
 
-    public Double getX(){
+    public double getX(){
         return x;
     }
 
-    public Double getY(){
+    public double getY(){
         return y;
     }
 
-    public Double getDistance(Point p2){//this point is p1 (distance)^2=(p1.x-p2.x)^2+(p1.y-p2.y)^2
+    public double getDistance(Point p2){//this point is p1 (distance)^2=(p1.x-p2.x)^2+(p1.y-p2.y)^2
         return Math.sqrt(Math.pow((this.x-p2.getX()),(2f))+Math.pow((this.y-p2.getY()),(2f)));
     }
 
