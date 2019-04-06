@@ -4,6 +4,8 @@ import java.sql.SQLOutput;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class Ejercicio5parte2 {
@@ -32,8 +34,7 @@ public class Ejercicio5parte2 {
             System.out.println("son iguales");
         else
             System.out.println("SON DISTNTOS");
-
-        ArrayList<Contact> repeated=oneplus3t.getDuplicates();
+        List<Contact> repeated=oneplus3t.findDuplicates();
         System.out.println(repeated.size());
         for(Contact c:repeated){
             System.out.println(c);

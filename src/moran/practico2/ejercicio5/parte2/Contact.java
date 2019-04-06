@@ -95,4 +95,10 @@ public class Contact {
             return true;
         return false;
     }
+
+    @Override
+    public int hashCode(){//esta bien hecho este override del hash?
+        String aux=this.name + this.surname + String.valueOf(this.number);
+        return aux.hashCode();
+    }
 }
