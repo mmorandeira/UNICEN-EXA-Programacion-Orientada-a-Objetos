@@ -1,43 +1,36 @@
 package moran.practico2.ejercicio3;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Rectangle {
-    private List<Point> vertices;
+    private Point topLeft, topRight, botLeft, botRight;
 
-    public Rectangle(Point v1,Point v2, Point v3,Point v4){
-        vertices=new ArrayList<Point>();
-        vertices.add(0,v1);
-        vertices.add(1,v2);
-        vertices.add(2,v3);
-        vertices.add(3,v4);
+    public Rectangle(Point topLeft, Point topRight, Point botLeft, Point botRight) {
+        this.topLeft=topLeft;
+        this.topRight=topRight;
+        this.botLeft=botLeft;
+        this.botRight=botRight;
     }
 
-    public void move(Double x, Double y){
-        for(Point vertice:vertices){
-            vertice.move(x,y);
-        }
+    public void move(Double x, Double y) {
+        topLeft.move(x,y);
+        topRight.move(x,y);
+        botLeft.move(x,y);
+        botRight.move(x,y);
     }
 
-    public double getArea(){
-        Double side1=vertices.get(0).getDistance(vertices.get(1));
-        Double side2=vertices.get(2).getDistance(vertices.get(3));
-        return side1*side2;
+    public double getArea() {
+        return this.getBase()*this.getHeight();
     }
 
-    public Point getVertice(Integer vertice){
-        if(vertice>=0 && vertice<4)
-            return vertices.get(vertice);
-        else
-            return null;
+    public boolean isSquare() {
+        return this.getBase()==this.getHeight();
     }
 
-    public boolean isSquare(){
-        Double side1=vertices.get(0).getDistance(vertices.get(1));
-        Double side2=vertices.get(2).getDistance(vertices.get(3));
-        return side1==side2;
+    private double getBase(){
+        return botLeft.getDistance(botRight);
     }
 
+    private double getHeight(){
+        return topLeft.getDistance(botLeft);
+    }
 
 }
