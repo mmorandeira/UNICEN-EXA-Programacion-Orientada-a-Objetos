@@ -11,10 +11,10 @@ public class Rectangle {
     }
 
     public void move(Double x, Double y) {
-        topLeft.move(x,y);
-        topRight.move(x,y);
-        botLeft.move(x,y);
-        botRight.move(x,y);
+        topLeft=new Point(x,y);
+        topRight=new Point(x,y);
+        botLeft=new Point(x,y);
+        botRight=new Point(x,y);
     }
 
     public double getArea() {
@@ -33,4 +33,35 @@ public class Rectangle {
         return topLeft.getDistance(botLeft);
     }
 
+    public boolean invert(Point vertice){
+        double base=getBase();
+        double height=getHeight();
+        if(topLeft.equals(vertice)){
+            
+            topLeft=new Point(vertice.getX()-base,vertice.getY()+height);
+            topRight=new Point(vertice.getX(),vertice.getY()+height);
+            botLeft=new Point(vertice.getX()-base,vertice.getY());
+            botRight=new Point(vertice.getX(),vertice.getY());
+            return true;
+        }else if(topRight.equals(vertice)){
+            topLeft=new Point(vertice.getX(),vertice.getY()+height);
+            topRight=new Point(vertice.getX()+base,vertice.getY()+height);
+            botLeft=new Point(vertice.getX(),vertice.getY());
+            botRight=new Point(vertice.getX()+base,vertice.getY());
+            return true;
+        }else if(botLeft.equals(vertice)){
+            topLeft=new Point(vertice.getX()-base,vertice.getY());
+            topRight=new Point(vertice.getX(),vertice.getY());
+            botLeft=new Point(vertice.getX()-base,vertice.getY()-height);
+            botRight=new Point(vertice.getX(),vertice.getY()-height);
+            return true;
+        }else if(botRight.equals(vertice)){
+            topLeft=new Point(vertice.getX(),vertice.getY());
+            topRight=new Point(vertice.getX(),vertice.getY());
+            botLeft=new Point(vertice.getX(),vertice.getY());
+            botRight=new Point(vertice.getX(),vertice.getY());
+            return true;
+        }
+        return false;
+    }
 }

@@ -22,8 +22,16 @@ public class Point {
         return x;
     }
 
+    public void setX(double x){
+        this.x=x;
+    }
+
     public double getY(){
         return y;
+    }
+
+    public void setY(double y){
+        this.y=y;
     }
 
     public double getDistance(Point p2){//this point is p1 (distance)^2=(p1.x-p2.x)^2+(p1.y-p2.y)^2
