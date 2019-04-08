@@ -13,6 +13,11 @@ public class Point {
         this.y=0d;
     }
 
+    public Point(Point point){
+        this.x=point.getX();
+        this.y=point.getY();
+    }
+
     public void move(double x, double y){
         this.x+=x;
         this.y+=y;
@@ -38,5 +43,19 @@ public class Point {
         return Math.sqrt(Math.pow((this.x-p2.getX()),(2f))+Math.pow((this.y-p2.getY()),(2f)));
     }
 
+    @Override
+    public String toString(){
+        return "(" + x + "," + y + ")";
+    }
 
+    @Override
+    public boolean equals(Object o){
+        Point p1=(Point) o;
+        return this.x==p1.getX() && this.y==p1.getY();
+    }
+
+    @Override
+    public int hashCode(){//esto esta bien??
+        return this.toString().hashCode();
+    }
 }
