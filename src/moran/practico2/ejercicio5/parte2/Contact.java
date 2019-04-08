@@ -91,9 +91,7 @@ public class Contact {
     @Override
     public boolean equals(Object o){
         Contact c1=(Contact)(o);
-        if(this.name.equals(c1.getName()) && this.surname.equals(c1.getSurname()) && this.number==c1.getNumber())
-            return true;
-        return false;
+        return (this.name.equals(c1.getName()) && this.surname.equals(c1.getSurname()) && this.number==c1.getNumber());
     }
 
     @Override
