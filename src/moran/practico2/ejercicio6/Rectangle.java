@@ -8,8 +8,8 @@ public class Rectangle {
 
     public Rectangle(Point topLeft, double base, double height) {
         this.topLeft=new Point (topLeft);
-        this.base=base;
-        this.height=height;
+        this.base=Math.abs(base);
+        this.height=Math.abs(height);
     }
 
     public void move(Double x, Double y) {
@@ -17,11 +17,11 @@ public class Rectangle {
     }
 
     public double getBase(){
-        return Math.abs(this.base);
+        return this.base;
     }
 
     public double getHeight(){
-        return Math.abs(this.height);
+        return this.height;
     }
 
     public double getArea() {
@@ -34,19 +34,19 @@ public class Rectangle {
 
     public boolean invert(Point vertice){
         //esto es lo que decia el enunciado? o lo inteprete mal
-        /*if(topLeft.equals(vertice)){
+        if(topLeft.equals(vertice)){
             topLeft=new Point(vertice.getX()-base,vertice.getY()+height);
             return true;
-        }else if(topRight.equals(vertice)){
+        }else if(vertice.equals(new Point (topLeft.getX()+base,topLeft.getY()))){
             topLeft=new Point(vertice.getX(),vertice.getY()+height);
             return true;
-        }else if(botLeft.equals(vertice)){
+        }else if(vertice.equals(new Point (topLeft.getX(),topLeft.getY()-height))){
             topLeft=new Point(vertice.getX()-base,vertice.getY());
             return true;
-        }else if(botRight.equals(vertice)){
+        }else if(vertice.equals(new Point (topLeft.getX()+base,topLeft.getY()-height))){
             topLeft=new Point(vertice.getX(),vertice.getY());
             return true;
-        }*/
+        }
         return false;
     }
 
