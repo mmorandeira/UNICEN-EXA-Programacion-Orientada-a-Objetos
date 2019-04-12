@@ -2,6 +2,7 @@ package moran.practico2.ejercicio5.parte2;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.Objects;
 
 public class Contact {
     private String name;
@@ -89,6 +90,22 @@ public class Contact {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Contact contact = (Contact) o;
+        return number == contact.number &&
+                Objects.equals(name, contact.name) &&
+                Objects.equals(surname, contact.surname);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, surname, number);
+    }
+
+/*
+    @Override
     public boolean equals(Object o){
         Contact c1=(Contact)(o);
         return (this.name.equals(c1.getName()) && this.surname.equals(c1.getSurname()) && this.number==c1.getNumber());
@@ -99,19 +116,6 @@ public class Contact {
         String aux=this.name + this.surname + String.valueOf(this.number);
         return aux.hashCode();
     }
-//
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (o == null || getClass() != o.getClass()) return false;
-//        Contact contact = (Contact) o;
-//        return number == contact.number &&
-//                Objects.equals(name, contact.name) &&
-//                Objects.equals(surname, contact.surname);
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(name, surname, number);
-//    }
+*/
+
 }
