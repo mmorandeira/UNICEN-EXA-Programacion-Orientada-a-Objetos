@@ -13,10 +13,10 @@ public class Meeting {
     private String subject;
 
 
-    public Meeting(String subject,LocalDate day, LocalTime start, LocalTime end) {
+    public Meeting(String subject, LocalDate day, LocalTime start, LocalTime end) {
         this.assistants = new HashMap<Integer, Person>();
         this.participants = new HashMap<Integer, Person>();
-        this.day=day;
+        this.day = day;
         this.subject = subject;
         this.start = start;
         this.end = end;
@@ -46,7 +46,7 @@ public class Meeting {
         this.subject = subject;
     }
 
-    public LocalDate getDay(){
+    public LocalDate getDay() {
         return day;
     }
 

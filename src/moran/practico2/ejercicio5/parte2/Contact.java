@@ -13,14 +13,14 @@ public class Contact {
     private LocalDate birthdate;
     private long number;
 
-    public Contact(String name,String surname,String adress,String city,String email,LocalDate birthdate,long number){
-           this.name=name;
-           this.surname=surname;
-           this.address=adress;
-           this.city=city;
-           this.email=email;
-           this.birthdate=birthdate;
-           this.number=number;
+    public Contact(String name, String surname, String adress, String city, String email, LocalDate birthdate, long number) {
+        this.name = name;
+        this.surname = surname;
+        this.address = adress;
+        this.city = city;
+        this.email = email;
+        this.birthdate = birthdate;
+        this.number = number;
     }
 
     public String getCity() {
@@ -79,12 +79,12 @@ public class Contact {
         this.number = number;
     }
 
-    public Integer getAge(){
-        return Period.between(birthdate,LocalDate.now()).getYears();
+    public Integer getAge() {
+        return Period.between(birthdate, LocalDate.now()).getYears();
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return this.name + ", " + this.surname + ". Phone number: " + this.number + ". Adress: " + this.address
                 + ", city:" + this.city + ", email: " + this.email + ", birthdate: " + this.birthdate;
     }

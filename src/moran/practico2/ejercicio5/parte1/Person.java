@@ -5,10 +5,10 @@ import java.time.Month;
 import java.time.temporal.ChronoUnit;
 
 public class Person {
-    private String name="N", surname="N", sex="F", mail="";
+    private String name = "N", surname = "N", sex = "F", mail = "";
     private Integer dni;
     private double weight, height;
-    private LocalDate birthdate=LocalDate.of(2000, Month.JANUARY, 1);
+    private LocalDate birthdate = LocalDate.of(2000, Month.JANUARY, 1);
 
     public Person(Integer dni) {
         this.setDni(dni);
