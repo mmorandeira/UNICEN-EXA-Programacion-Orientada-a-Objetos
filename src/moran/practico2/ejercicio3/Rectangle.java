@@ -4,6 +4,8 @@ public class Rectangle {
     private Point topLeft, topRight, botLeft, botRight;
 
     public Rectangle(Point topLeft, Point topRight, Point botLeft, Point botRight) {
+        //if (!esRectangulo(topLeft, topRight, botLeft, botRight))
+        //    throw new IllegalArgumentException("El rectangulo no es rectangulo.");
         // Los copio para que no me afecte el rectagunlo desde afuera. Esta bien asi?
         // supongo que me pasan bien el rectangulo
         // sino la otra es crear un por default y si los que pasan son los que van, lo creo??
