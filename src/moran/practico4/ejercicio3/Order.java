@@ -11,6 +11,17 @@ public class Order {
         return furniture;
     }
 
+    @Override
+    public String toString() {
+        return "Order{" +
+                "furniture='" + furniture + '\'' +
+                ", material='" + material + '\'' +
+                ", distance=" + distance +
+                ", cost=" + cost +
+                ", maxDate=" + maxDate +
+                '}';
+    }
+
     public void setFurniture(String furniture) {
         this.furniture = furniture;
     }

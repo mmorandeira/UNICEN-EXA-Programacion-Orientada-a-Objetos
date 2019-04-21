@@ -5,6 +5,5 @@ import java.util.Vector;
 public class Factory {
     private Politic politic;
     private String name;
-    private Vector<Factory> factoryVector;//fabricas que pertenecen al convenio
 
 }
